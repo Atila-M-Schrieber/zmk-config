@@ -53,16 +53,28 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_capsword {
+            bindings = <&caps_word>;
+            key-positions = <13 22>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         Base {
             label = "Base";
             bindings = <
-&mo 8       &kp Q       &kp W       &kp F            &kp P         &kp B        &kp J         &kp L        &kp U         &kp Y       &kp SEMI            &trans
-&kp ESCAPE  &hm LGUI A  &hm LALT S  &hm LCTRL D      &hm LSHIFT F  &kp G        &kp M         &hm RSHFT J  &hm RCTRL K   &hm RALT L  &hm RGUI SEMICOLON  &kp APOS
-&kp LPAR    &kp Z       &kp X       &kp C            &kp D         &kp V        &kp K         &kp H        &kp COMMA     &kp DOT     &kp SLASH           &kp RPAR
-                                    &lt 1 BACKSPACE  &lt 2 TAB     &kp ENTER    &lt 10 SPACE  &lt 2 TAB    &lt 1 DELETE
+&mo 8       &kp Q        &kp W        &kp F            &kp P       &kp B        &kp J         &kp L       &kp U         &kp Y        &kp SEMI     &trans
+&kp ESCAPE  &hm LSHFT A  &hm LCTRL R  &hm LMETA S      &hm LALT T  &kp G        &kp M         &hm RALT N  &hm RMETA E   &hm RCTRL I  &hm RSHFT O  &kp APOS
+&kp LPAR    &kp Z        &kp X        &kp C            &kp D       &kp V        &kp K         &kp H       &kp COMMA     &kp DOT      &kp SLASH    &kp RPAR
+                                      &lt 1 BACKSPACE  &lt 2 TAB   &kp ENTER    &lt 10 SPACE  &lt 2 TAB   &lt 1 DELETE
             >;
         };
 
