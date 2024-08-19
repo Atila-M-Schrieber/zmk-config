@@ -137,12 +137,12 @@
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings =
-                <&macro_press>,
-                <&kp RALT>,
-                <&macro_tap>,
-                <&macro_param_1to1 &kp MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_release>,
-                <&kp RALT>;
+                <&macro_press &kp RALT>,
+                <&macro_param_1to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>,
+                <&macro_param_2to1>,
+                <&macro_tap &kp MACRO_PLACEHOLDER>,
+                <&macro_release &kp RALT>;
 
             label = "ACCENT";
         };
