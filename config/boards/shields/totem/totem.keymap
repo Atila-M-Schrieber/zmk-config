@@ -75,32 +75,32 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sqns: single_quote_no_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SINGLE_QUOTE_NO_SHIFT";
-            bindings = <&kp SQT>, <&kp SQT>;
+        //sqns: single_quote_no_shift {
+        //    compatible = "zmk,behavior-mod-morph";
+        //    label = "SINGLE_QUOTE_NO_SHIFT";
+        //    bindings = <&kp SQT>, <&kp SQT>;
 
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        //    #binding-cells = <0>;
+        //    mods = <(MOD_LSFT|MOD_RSFT)>;
+        //};
 
-        dqns: double_quote_no_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOUBLE_QUOTE_NO_SHIFT";
-            bindings = <&kp DQT>, <&kp DQT>;
+        //dqns: double_quote_no_shift {
+        //    compatible = "zmk,behavior-mod-morph";
+        //    label = "DOUBLE_QUOTE_NO_SHIFT";
+        //    bindings = <&kp DQT>, <&kp DQT>;
 
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        //    #binding-cells = <0>;
+        //    mods = <(MOD_LSFT|MOD_RSFT)>;
+        //};
 
-        eqns: equal_no_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "EQUAL_NO_SHIFT";
-            bindings = <&kp EQUAL>, <&kp EQUAL>;
+        //eqns: equal_no_shift {
+        //    compatible = "zmk,behavior-mod-morph";
+        //    label = "EQUAL_NO_SHIFT";
+        //    bindings = <&kp EQUAL>, <&kp EQUAL>;
 
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        //    #binding-cells = <0>;
+        //    mods = <(MOD_LSFT|MOD_RSFT)>;
+        //};
     };
 
     combos {
