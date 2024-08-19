@@ -60,18 +60,18 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        f1s: f1or11 {
+        fis: fi_or_xi {
             compatible = "zmk,behavior-mod-morph";
-            label = "F1OR11";
+            label = "FI_OR_XI";
             bindings = <&kp F1>, <&kp F11>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        f2s: f2_or_f12 {
+        fiis: fii_or_xii {
             compatible = "zmk,behavior-mod-morph";
-            label = "F2_OR_F12";
+            label = "FII_OR_FXII";
             bindings = <&kp F2>, <&kp F12>;
 
             #binding-cells = <0>;
@@ -183,8 +183,8 @@
             label = "NumSym";
             bindings = <
            &kp LG(N1)    &kp LG(N2)  &kp LG(N3)  &kp LG(N4)  &kp LG(N5)    &kp LG(N6)  &kp LG(N7)  &kp LG(N8)  &kp LG(N9)  &kp MINUS     &kp
-&kp EQUAL  &hm LSHFT N9  &kp N7      &kp N0      &kp N3      &kp F3        &f1s        &kp N1      &kp N2      &kp N4      &hm RSHFT N8  &kp GRAVE
-&trans     &kp F9        &kp F7      &kp F10     &kp N5      &kp F5        &kp F6      &kp N6      &f2s        &kp F4      &kp F8        &kp BSLH
+&kp EQUAL  &hm LSHFT N9  &kp N7      &kp N0      &kp N3      &kp F3        &fis        &kp N1      &kp N2      &kp N4      &hm RSHFT N8  &kp GRAVE
+&trans     &kp F9        &kp F7      &kp F10     &kp N5      &kp F5        &kp F6      &kp N6      &fiis       &kp F4      &kp F8        &kp BSLH
                                      &kp         &kp         &kp           &kp         &kp         &kp
             >;
         };
