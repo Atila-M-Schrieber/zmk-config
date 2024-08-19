@@ -130,18 +130,18 @@
             label = "FULL_SCREEN_SHOT";
         };
 
-        acc: accent {
-            compatible = "zmk,behavior-macro-two-param";
-            #binding-cells = <2>;
-            bindings =
-                <&macro_press &kp RALT>,
-                <&macro_param_1to1>,
-                <&macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_param_2to1>,
-                <&macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_release &kp RALT>;
+        //acc: accent {
+        //    compatible = "zmk,behavior-macro-two-param";
+        //    #binding-cells = <2>;
+        //    bindings =
+        //        <&macro_press &kp RALT>,
+        //        <&macro_param_1to1>,
+        //        <&macro_tap &kp MACRO_PLACEHOLDER>,
+        //        <&macro_param_2to1>,
+        //        <&macro_tap &kp MACRO_PLACEHOLDER>,
+        //        <&macro_release &kp RALT>;
 
-        };
+        //};
     };
 
     keymap {
@@ -153,7 +153,7 @@
             &kp Q        &kp W        &kp F          &kp P        &kp B        &kp J        &kp L       &kp U         &kp Y        &kp SEMI     &mo 4
 &kp ESCAPE  &hm LSHFT A  &hm LCTRL R  &hm LMETA S    &hm LALT T   &kp G        &kp M        &hm RALT N  &hm RMETA E   &hm RCTRL I  &hm RSHFT O  &kp APOS
 &kp LPAR    &kp Z        &kp X        &kp C          &kp D        &kp V        &kp K        &kp H       &kp COMMA     &kp DOT      &kp SLASH    &kp RPAR
-                                      &kp BACKSPACE  &lt 3 SPACE  &kp ENTER    &lt 6 SPACE  &lt 2 TAB   &lt 1 DELETE
+                                      &kp BACKSPACE  &lt 3 SPACE  &kp ENTER    &kp SPACE  &lt 2 TAB   &lt 1 DELETE
             >;
         };
 
@@ -207,13 +207,13 @@
             >;
         };
 
-        Accent {
-            bindings = <
-        &trans      &trans  &trans  &trans  &trans    &trans  &acc U SQT  &acc U DQT  &acc EQUAL U  &acc EQUAL O  &trans
-&trans  &acc A SQT  &trans  &trans  &trans  &trans    &trans  &trans      &acc E SQT  &acc I SQT    &acc O DQT    &trans
-&trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans      &trans      &trans        &acc SQT O    &trans
-                            &trans  &trans  &trans    &trans  &trans      &trans
-            >;
-        };
+//        Accent {
+//            bindings = <
+//        &trans      &trans  &trans  &trans  &trans    &trans  &acc U SQT  &acc U DQT  &acc EQUAL U  &acc EQUAL O  &trans
+//&trans  &acc A SQT  &trans  &trans  &trans  &trans    &trans  &trans      &acc E SQT  &acc I SQT    &acc O DQT    &trans
+//&trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans      &trans      &trans        &acc SQT O    &trans
+//                            &trans  &trans  &trans    &trans  &trans      &trans
+//            >;
+//        };
     };
 };
