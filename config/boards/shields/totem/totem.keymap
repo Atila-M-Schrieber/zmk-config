@@ -212,9 +212,9 @@
 
         Accent {
             bindings = <
-        &trans      &trans  &trans  &trans  &trans    &trans  &acc U SQT  &acc U DQT  &acc EQUAL U  &acc EQUAL O          &trans
-&trans  &acc A SQT  &trans  &trans  &trans  &trans    &trans  &trans      &acc E SQT  &acc I SQT    &acc O DOUBLE_QUOTES  &trans
-&trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans      &trans      &trans        &acc LG(SQT) O        &trans
+        &trans      &trans  &trans  &trans  &trans    &trans  &acc U SQT  &acc U DQT  &acc EQUAL U  &acc EQUAL O  &trans
+&trans  &acc A SQT  &trans  &trans  &trans  &trans    &trans  &trans      &acc E SQT  &acc I SQT    &acc O DQT    &trans
+&trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans      &trans      &trans        &acc SQT O    &trans
                             &trans  &trans  &trans    &trans  &trans      &trans
             >;
         };
