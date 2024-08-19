@@ -51,7 +51,7 @@
         fsu: flip_shift_underscore {
             compatible = "zmk,behavior-mod-morph";
             label = "FLIP_SHIFT_UNDERSCORE";
-            bindings = <&kp UNDER>, <&kt MINUS>;
+            bindings = <&kp UNDER>, <&kp MINUS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
