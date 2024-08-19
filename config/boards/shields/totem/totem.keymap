@@ -144,7 +144,6 @@
                 <&macro_tap &kp MACRO_PLACEHOLDER>,
                 <&macro_release &kp RALT>;
 
-            label = "ACCENT";
         };
     };
 
