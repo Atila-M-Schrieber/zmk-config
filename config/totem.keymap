@@ -12,7 +12,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
 #define Base        0
@@ -134,12 +133,56 @@
             compatible = "zmk,behavior-macro-two-param";
             #binding-cells = <2>;
             bindings =
-                <&macro_press &kp RALT>,
-                <&macro_param_1to1>,
-                <&macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_param_2to1>,
-                <&macro_tap &kp MACRO_PLACEHOLDER>,
-                <&macro_release &kp RALT>;
+                <&macro_press>,
+                <&kp RALT &macro_param_1to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER &macro_param_2to1>,
+                <&macro_tap>,
+                <&kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp RALT>;
+        };
+
+        accs: accent_single_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&sqns &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp RALT>;
+
+            label = "ACCENT_SINGLE_QUOTE";
+        };
+
+        accd: accent_double_quote {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&dqns &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp RALT>;
+
+            label = "ACCENT_DOUBLE_QUOTE";
+        };
+
+        acce: accent_equal {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&macro_press>,
+                <&kp RALT>,
+                <&macro_tap>,
+                <&eqns &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_release>,
+                <&kp RALT>;
+
+            label = "ACCENT_EQUAL";
         };
     };
 
@@ -208,10 +251,10 @@
 
         Accent {
             bindings = <
-        &trans      &trans  &trans  &trans  &trans    &trans  &acc U SQT  &acc U DQT  &acc EQUAL U  &acc EQUAL O  &trans
-&trans  &acc A SQT  &trans  &trans  &trans  &trans    &trans  &trans      &acc E SQT  &acc I SQT    &acc O DQT    &trans
-&trans  &trans      &trans  &trans  &trans  &trans    &trans  &trans      &trans      &trans        &acc SQT O    &trans
-                            &trans  &trans  &trans    &trans  &trans      &trans
+        &trans   &trans  &trans  &trans  &trans    &trans  &accs U  &accd U  &acce U  &acce O  &trans
+&trans  &accs A  &trans  &trans  &trans  &trans    &trans  &trans   &accs E  &accs I  &accd O  &trans
+&trans  &trans   &trans  &trans  &trans  &trans    &trans  &trans   &trans   &trans   &accs O  &trans
+                         &trans  &trans  &trans    &trans  &trans   &trans
             >;
         };
     };
