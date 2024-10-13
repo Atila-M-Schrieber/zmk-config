@@ -109,6 +109,26 @@
             #binding-cells = <2>;
             tapping-term-ms = <150>;
         };
+
+        hmaccs: homerow_mods_accent_single {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_ACCENT_SINGLE";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            global-quick-tap;
+            bindings = <&kp>, <&accs>;
+        };
+
+        hmaccd: homerow_mods_accent_double {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_ACCENT_DOUBLE";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;
+            global-quick-tap;
+            bindings = <&kp>, <&accd>;
+        };
     };
 
     combos {
@@ -193,6 +213,20 @@
 
             label = "ACCENT_EQUAL";
         };
+
+        game_type: game_type {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &to 7>;
+            label = "GAME_TYPE";
+        };
+
+        game_type_exit: game_type_exit {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER &to 4>;
+            label = "GAME_TYPE_EXIT";
+        };
     };
 
     keymap {
@@ -241,9 +275,9 @@
         Game {
             label = "Game";
             bindings = <
-             &kp TAB    &kp Q  &kp W     &kp E      &kp R              &trans  &trans  &trans  &trans  &trans  &trans
-&df TAB ESC  &kp LCTRL  &kp A  &kp S     &kp D      &kp T              &trans  &trans  &trans  &trans  &trans  &trans
-&trans       &kp LSHFT  &kp Z  &kp X     &kp C      &kp V              &trans  &trans  &trans  &trans  &trans  &trans
+             &kp TAB    &kp Q  &kp X     &kp E      &kp R              &trans  &trans  &trans  &trans  &trans  &trans
+&df TAB ESC  &kp LCTRL  &kp A  &kp W     &kp D      &kp T              &trans  &trans  &trans  &trans  &trans  &trans
+&trans       &kp LSHFT  &kp Z  &kp S     &kp C      &kp V              &trans  &trans  &trans  &trans  &trans  &trans
                                &kp LALT  &kp SPACE  &lt 5 BACKSPACE    &trans  &trans  &trans
             >;
         };
@@ -251,28 +285,28 @@
         Gameplus {
             label = "Gameplus";
             bindings = <
-           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
-&kp ESC    &kp G         &trans        &trans        &trans        &kp M     &trans  &trans  &trans  &trans  &trans  &trans
-&kp ENTER  &kp TAB       &trans        &trans        &trans        &kp V     &trans  &trans  &trans  &trans  &trans  &trans
-                                       &kp ESCAPE    &trans        &trans    &trans  &trans  &trans
+            &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp B     &trans  &trans  &trans  &trans  &trans  &trans
+&kp ESC     &kp G         &trans        &trans        &trans        &kp M     &trans  &trans  &trans  &trans  &trans  &trans
+&game_type  &kp TAB       &trans        &trans        &trans        &kp V     &trans  &trans  &trans  &trans  &trans  &trans
+                                        &kp ESCAPE    &trans        &trans    &trans  &trans  &trans
             >;
         };
 
         Accent {
             bindings = <
-        &trans   &trans  &trans  &trans  &trans    &trans  &accs U  &accd U  &acce U  &acce O  &trans
-&trans  &accs A  &trans  &trans  &trans  &trans    &trans  &trans   &accs E  &accs I  &accd O  &trans
-&trans  &trans   &trans  &trans  &trans  &trans    &trans  &trans   &trans   &trans   &accs O  &trans
-                         &trans  &trans  &trans    &trans  &trans   &trans
+        &trans            &trans  &trans  &trans  &trans    &trans  &accs U  &accd U  &acce U  &acce O               &trans
+&trans  &hmaccs LSHIFT A  &trans  &trans  &trans  &trans    &trans  &trans   &accs E  &accs I  &hmaccd LEFT_SHIFT O  &trans
+&trans  &trans            &trans  &trans  &trans  &trans    &trans  &trans   &trans   &trans   &accs O               &trans
+                                  &trans  &trans  &trans    &trans  &trans   &trans
             >;
         };
 
-        temp {
+        GameType {
             bindings = <
-        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp J   &kp L   &kp U   &kp Y   &kp SEMI  &kp C_VOL_UP
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans    &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+                     &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&game_type_exit ESC  &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+&trans               &trans  &trans  &trans  &trans  &trans                   &trans  &trans  &trans  &trans  &trans  &trans
+                                     &trans  &trans  &game_type_exit ENTER    &trans  &trans  &trans
             >;
         };
     };
